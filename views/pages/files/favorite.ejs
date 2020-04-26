@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+</head>
+<body>
+    <%cards.forEach(value=>{%>
+        <img src="<%=value.image%>" alt="<%=value.name%>">
+        <h1><%=value.name%></h1>
+        <h5><%=value.level%></h5>
+        <form action="/add" method="POST">
+            <input type="text" name="name" value="<%=value.name%>">
+            <input type="text" name="level" value="<%=value.level%>">
+            <input type="text" name="image" value="<%=value.image%>">
+            <button type="submit">Insert</button>
+        </form>
+    <%})%>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+</head>
+<body>
+    <%cards.forEach(value=>{%>
+        <img src="<%=value.image%>" alt="<%=value.name%>">
+        <h1><%=value.name%></h1>
+        <h5><%=value.level%></h5>
+        <form method="POST" action="/delete/<%=value.id%>?_method=delete">
+            <button type="submit">Delete</button>
+        </form>
+        <form action="POST" action="/update/<%=value.id%>?_method=put">
+            <input type="text" name="name" value="<%=value.name%>">
+            <input type="text" name="level" value="<%=value.level%>">
+            <input type="text" name="image" value="<%=value.image%>">
+            <button type="submit">Update</button>
+        </form>
+    <%})%>
+</body>
+</html>

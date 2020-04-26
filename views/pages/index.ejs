@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+</head>
+<body>
+    <%results.forEach(value=>{%>
+        <img src="<%=value.image%>" alt="<%=value.name%>">
+        <h1><%=value.name%></h1>
+        <h5><%=value.level%></h5>
+    <%})%>
+    <a href="/cards/<%=value.id%">View details</a>
+</body>
+</html>
